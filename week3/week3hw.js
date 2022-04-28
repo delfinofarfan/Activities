@@ -36,10 +36,4 @@ function servePizza(preparePizza) {
     return preparePizza;
 }
 servePizza(cookedPizza);
-//#6
-function getEntirePizzaOrder(...callback){
-    alert(callback[2]([size, crust, toppings]));
-    alert(callback[0](toppings));
-    alert(callback[1](size, crust, ...toppings));
-    alert(callback[3](preparePizza));
-};
+//#6^^
