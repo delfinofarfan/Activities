@@ -17,26 +17,25 @@ function getPizzaOrder(size, crust, ...toppings) {
     } console.log(`${pizzaorder} coming up!`);
         return [size, crust, toppings];
 };
-getPizzaOrder("large", "thin", "cheese", "sausage", "pineapple", "anchovies", "bell pepper");
+let customerOrder = getPizzaOrder("large", "thin", "cheese", "sausage", "pineapple", "anchovies", "bell pepper");
 // #4
-function preparePizza([size, crust, toppings]) {
+function preparePizza([orderSize, orderCrust, orderToppings]) {
     let prepare = "...Cooking pizza...";
-    const pizza = {
-        size: "medium",
-        crust: "thin",
-        toppings: "cheese"
-    };
     console.log(prepare);
-    return (pizza);
+        return {
+        size: orderSize,
+        crust: orderCrust,
+        toppings: orderToppings
+    };
 }
-preparePizza(["small", "deep dish", pizzaToppings])
+let cookedPizza = preparePizza(customerOrder); 
 // #5
-function servePizza({preparePizza}) {
-    let serve = ({preparePizza}) => `Order up! Here's your ${size} ${crust} crust pizza with ${toppings}`;
+function servePizza(preparePizza) {
+    let serve = `Order up! Here's your ${preparePizza.size} ${preparePizza.crust} crust pizza with ${preparePizza.toppings}`;
     console.log(`${serve} ...Enjoy!`);
-    return (serve);
+    return preparePizza;
 }
-servePizza("medium", "thick", "cheese");
+servePizza(cookedPizza);
 //#6
 function getEntirePizzaOrder(...callback){
     alert(callback[2]([size, crust, toppings]));
